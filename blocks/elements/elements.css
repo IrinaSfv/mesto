@@ -1,0 +1,40 @@
+.elements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 17px;
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding: 0 200px;
+    margin: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1124px) {
+    .elements {
+        padding: 0 100px;
+    }
+}
+
+@media screen and (max-width: 934px) {
+    .elements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .elements {
+        padding: 0 19px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    /* мобильные устройства */
+    .elements {
+        padding: 0 19px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

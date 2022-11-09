@@ -1,0 +1,11 @@
+.profile__edit-info {
+    display: flex;
+    gap: 18px;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 934px) {
+    .profile__edit-info {
+        margin-bottom: 14px;
+    }
+}

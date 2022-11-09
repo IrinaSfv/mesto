@@ -1,0 +1,12 @@
+.page__content {
+    margin-top: 40px;
+    margin-bottom: 66px;
+}
+
+@media screen and (max-width: 568px) {
+    /* мобильные устройства */
+    .page__content {
+        margin-top: 42px;
+        margin-bottom: 48px;
+    }
+}

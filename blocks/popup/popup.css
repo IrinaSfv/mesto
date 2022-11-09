@@ -1,0 +1,10 @@
+.popup {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}

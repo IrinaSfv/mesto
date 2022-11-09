@@ -1,0 +1,23 @@
+.popup__close-button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    max-width: 32px;
+    max-height: 32px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.popup__close-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 568px) {
+    .popup__close-button {
+        align-self: flex-end;
+        max-width: 20px;
+        max-height: 20px;
+    }
+}

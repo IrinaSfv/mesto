@@ -1,0 +1,26 @@
+.page {
+    min-width: 320px;
+    max-width: 1280px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 0 60px;
+    background-color: #000;
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: #FFF;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%; 
+}
+
+@media screen and (max-width: 568px) {
+    /* мобильные устройства */
+    .page {
+        padding: 28px 0 36px;
+    }
+}
