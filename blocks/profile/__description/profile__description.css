@@ -7,6 +7,9 @@
     grid-row-end: 3;
     align-self: start;
     max-width: 336px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -25,6 +28,6 @@
     .profile__description {
         font-size: 14px;
         line-height: 17px;
-        max-width: 100%;
+        max-width: 189px;
     }
 }
