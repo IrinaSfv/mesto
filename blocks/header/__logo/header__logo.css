@@ -1,7 +1,6 @@
 .header__logo {
     max-width: 142px;
-    max-height: 33px;
-    margin-bottom: 41px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 760px) {
@@ -13,8 +12,6 @@
 @media screen and (max-width: 568px) {
     /* мобильные устройства */
     .header__logo {
-        width: 103.74px;
-        height: 24.4px;
-        margin-bottom: 31.6px;
+        max-width: 103.74px;
     }
 }

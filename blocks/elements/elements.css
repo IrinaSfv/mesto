@@ -1,25 +1,18 @@
 .elements {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px 17px;
-    justify-content: center;
-    justify-items: stretch;
-    align-items: stretch;
     box-sizing: border-box;
     padding: 0 200px;
     margin: 0;
-    width: 100%;
 }
 
-@media screen and (max-width: 1124px) {
+@media screen and (max-width: 1190px) {
     .elements {
         padding: 0 100px;
     }
 }
 
-@media screen and (max-width: 934px) {
+@media screen and (max-width: 990px) {
     .elements {
-        grid-template-columns: repeat(2, 1fr);
+        padding: 0 50px;
     }
 }
 
@@ -33,8 +26,5 @@
     /* мобильные устройства */
     .elements {
         padding: 0 19px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
     }
 }

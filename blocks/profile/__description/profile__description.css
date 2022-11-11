@@ -1,16 +1,23 @@
 .profile__description {
     margin: 0;
     padding: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: start;
+    max-width: 336px;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
 }
 
-@media screen and (max-width: 934px) {
+@media screen and (max-width: 990px) {
     .profile__description {
-        margin-bottom: 36px;
+        margin-bottom: 33px;
         text-align: center;
+        align-self: center;
     }
 }
 
@@ -18,5 +25,6 @@
     .profile__description {
         font-size: 14px;
         line-height: 17px;
+        max-width: 100%;
     }
 }

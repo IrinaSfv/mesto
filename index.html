@@ -5,87 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Mesto Russia</title>
+    <title lang="en">Mesto Russia</title>
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/Header_Logo.svg" alt="Логотип">
-        <hr class="header__line">
+        <div class="header__line">
+            <img class="header__logo" src="./images/Header_Logo.svg" alt="Логотип">
+        </div>
     </header>
     <main class="content page__content">
         <section class="profile">
             <img class="profile__avatar" src="./images/Profile_Avatar.jpg" alt="Аватар">
             <div class="profile__avatar-info">
-                <div class="profile__edit-info">
-                    <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <button class="profile__edit-button"><img class="profile__edit-button-picture" src="./images/Profile_EditButton.svg" alt=""></button>
-                </div>
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <button class="profile__edit-button" type="button" aria-label="Редактирование"></button>
                 <p class="profile__description">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"><img class="profile__add-button-picture" src="./images/Profile_AddButton.svg" alt=""></button>
+            <button class="profile__add-button" type="button" aria-label="Добавление"></button>
         </section>
-        <section class="elements">
-            <article class="element">
-                <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
-                <div class="element__description">
-                    <h2 class="element__title">Карачаевск</h2>
-                    <button class="element__like-button"><img class="element__like" src="./images/Elements_LikeButton.svg" alt="Лайк"><img class="element__like element__like_active" src="./images/Elements_LikeButton_Active.svg" alt="Значок лайка"></button>
-                </div>
-            </article>
-            <article class="element">
-                <img class="element__photo" src="./images/Elements_Elbrus.jpg" alt="Вид на гору Эльбус"> 
-                <div class="element__description">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__like-button"><img class="element__like" src="./images/Elements_LikeButton.svg" alt="Лайк"><img class="element__like element__like_active" src="./images/Elements_LikeButton_Active.svg" alt="Значок лайка"></button>
-                </div>
-            </article>
-            <article class="element">
-                <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
-                <div class="element__description">
-                    <h2 class="element__title">Домбай</h2>
-                    <button class="element__like-button"><img class="element__like" src="./images/Elements_LikeButton.svg" alt="Лайк"><img class="element__like element__like_active" src="./images/Elements_LikeButton_Active.svg" alt="Значок лайка"></button>
-                </div>
-            </article>
-            <article class="element">
-                <img class="element__photo" src="./images/Elements_Elbrus.jpg" alt="Вид на гору Эльбус"> 
-                <div class="element__description">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__like-button"><img class="element__like" src="./images/Elements_LikeButton.svg" alt="Лайк"><img class="element__like element__like_active" src="./images/Elements_LikeButton_Active.svg" alt="Значок лайка"></button>
-                </div>
-            </article>
-            <article class="element">
-                <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
-                <div class="element__description">
-                    <h2 class="element__title">Домбай</h2>
-                    <button class="element__like-button"><img class="element__like" src="./images/Elements_LikeButton.svg" alt="Лайк"><img class="element__like element__like_active" src="./images/Elements_LikeButton_Active.svg" alt="Значок лайка"></button>
-                </div>
-            </article>
-            <article class="element">
-                <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
-                <div class="element__description">
-                    <h2 class="element__title">Карачаево-Черкессия</h2>
-                    <button class="element__like-button"><img class="element__like" src="./images/Elements_LikeButton.svg" alt="Значок лайка"><img class="element__like element__like_active" src="./images/Elements_LikeButton_Active.svg" alt="Значок лайка"></button>
-                </div>
-            </article>
+        <section class="elements" aria-label="Элементы">
+            <ul class="elements__list">
+                <li>
+                    <article class="element">
+                        <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
+                        <div class="element__description">
+                            <h2 class="element__title">Карачаевск</h2>
+                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="element">
+                        <img class="element__photo" src="./images/Elements_Elbrus.jpg" alt="Вид на гору Эльбус"> 
+                        <div class="element__description">
+                            <h2 class="element__title">Гора Эльбрус</h2>
+                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="element">
+                        <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
+                        <div class="element__description">
+                            <h2 class="element__title">Домбай</h2>
+                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="element">
+                        <img class="element__photo" src="./images/Elements_Elbrus.jpg" alt="Вид на гору Эльбус"> 
+                        <div class="element__description">
+                            <h2 class="element__title">Гора Эльбрус</h2>
+                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="element">
+                        <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
+                        <div class="element__description">
+                            <h2 class="element__title">Домбай</h2>
+                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="element">
+                        <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
+                        <div class="element__description">
+                            <h2 class="element__title">Карачаево-Черкессия</h2>
+                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                        </div>
+                    </article>
+                </li>
+            </ul>
         </section>
     </main>
     <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+        <p class="footer__copyright" lang="en">&copy; 2022 Mesto Russia</p>
     </footer>
-    <section class="popup">
-        <div class="popup__background"></div>
+    <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-button"><img class="popup__button-image" src="./images/EditForm_CloseIcon.svg" alt="Значок закрытия"></button>
-            <form class="popup__form">
+            <button class="popup__close-button" type="button" aria-label="Значок закрытия"></button>
+            <div class="popup__edit-form">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <fieldset class="popup__form-info">
-                    <input class="popup__name" type="text" name="name" value="Жак-Ив Кусто">
-                    <input class="popup__user-info" type="text" name="user-info" value="Исследователь океана">
-                    <button class="popup__submit-button" type="submit">Сохранить</button>
-                </fieldset>
-            </form> 
+                <form class="popup__form" name="editPopup">
+                    <input class="popup__input popup__input_type_name" type="text" name="name" value="Жак-Ив Кусто" placeholder="Имя">
+                    <input class="popup__input popup__input_type_user-info" type="text" name="userInfo" value="Исследователь океана" placeholder="О себе">
+                    <button type="submit" class="popup__submit-button">Сохранить</button>
+                </form> 
+            </div>
         </div>
-    </section>
-    <script src="./js/index.js"></script>
+    </div>
+    <script src="./js/index.js" defer></script>
 </body>
 </html>

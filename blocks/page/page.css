@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 45px 0 60px;
+    padding: 45px 0 56px;
     background-color: #000;
     font-family: 'Inter', 'Arial', sans-serif;
     color: #FFF;
@@ -21,6 +21,6 @@
 @media screen and (max-width: 568px) {
     /* мобильные устройства */
     .page {
-        padding: 28px 0 36px;
+        padding: 28px 0 32px;
     }
 }
