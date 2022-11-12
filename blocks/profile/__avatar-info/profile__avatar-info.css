@@ -1,7 +1,7 @@
 .profile__avatar-info {
     align-self: center;
     display: grid;
-    align-items: end;
+    align-items: baseline;
     box-sizing: border-box;
     grid-template-columns: minmax(min-content, max-content) 24px;
     grid-template-rows: repeat(2, minmax(min-content, max-content));
@@ -10,11 +10,8 @@
 
 @media screen and (max-width: 990px) {
     .profile__avatar-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         gap: 8px;
-        max-width: 100%;
-        position: relative;
+        width: 100%;
     }
 }

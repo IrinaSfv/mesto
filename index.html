@@ -9,19 +9,17 @@
 </head>
 <body class="page">
     <header class="header">
-        <div class="header__line">
-            <img class="header__logo" src="./images/Header_Logo.svg" alt="Логотип">
-        </div>
+        <img class="header__logo" src="./images/Header_Logo.svg" alt="Логотип">
     </header>
     <main class="content page__content">
         <section class="profile">
             <img class="profile__avatar" src="./images/Profile_Avatar.jpg" alt="Аватар">
             <div class="profile__avatar-info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
-                <button class="profile__edit-button" type="button" aria-label="Редактирование"></button>
+                <button class="profile__edit-button" type="button" aria-label="Кнопка редактирования профиля пользователя"></button>
                 <p class="profile__description">Исследователь океана</p>
             </div>
-            <button class="profile__add-button" type="button" aria-label="Добавление"></button>
+            <button class="profile__add-button" type="button" aria-label="Кнопка добавления новой карточки места"></button>
         </section>
         <section class="elements" aria-label="Элементы">
             <ul class="elements__list">
@@ -30,7 +28,7 @@
                         <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
                         <div class="element__description">
                             <h2 class="element__title">Карачаевск</h2>
-                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                            <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
                 </li>
@@ -39,7 +37,7 @@
                         <img class="element__photo" src="./images/Elements_Elbrus.jpg" alt="Вид на гору Эльбус"> 
                         <div class="element__description">
                             <h2 class="element__title">Гора Эльбрус</h2>
-                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                            <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
                 </li>
@@ -48,7 +46,7 @@
                         <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
                         <div class="element__description">
                             <h2 class="element__title">Домбай</h2>
-                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                            <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
                 </li>
@@ -57,7 +55,7 @@
                         <img class="element__photo" src="./images/Elements_Elbrus.jpg" alt="Вид на гору Эльбус"> 
                         <div class="element__description">
                             <h2 class="element__title">Гора Эльбрус</h2>
-                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                            <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
                 </li>
@@ -66,7 +64,7 @@
                         <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
                         <div class="element__description">
                             <h2 class="element__title">Домбай</h2>
-                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                            <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
                 </li>
@@ -75,7 +73,7 @@
                         <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
                         <div class="element__description">
                             <h2 class="element__title">Карачаево-Черкессия</h2>
-                            <button class="element__like-button" type="button" aria-label="Лайк"></button>
+                            <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
                 </li>
@@ -87,17 +85,15 @@
     </footer>
     <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-button" type="button" aria-label="Значок закрытия"></button>
-            <div class="popup__edit-form">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form" name="editPopup">
-                    <input class="popup__input popup__input_type_name" type="text" name="name" value="Жак-Ив Кусто" placeholder="Имя">
-                    <input class="popup__input popup__input_type_user-info" type="text" name="userInfo" value="Исследователь океана" placeholder="О себе">
-                    <button type="submit" class="popup__submit-button">Сохранить</button>
-                </form> 
-            </div>
+            <button class="popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form" name="editPopup">
+                <input class="popup__input popup__input_type_name" type="text" name="name" value="Имя" placeholder="Имя">
+                <input class="popup__input popup__input_type_user-info" type="text" name="userInfo" value="О себе" placeholder="О себе">
+                <button type="submit" class="popup__submit-button">Сохранить</button>
+            </form>
         </div>
     </div>
-    <script src="./js/index.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
 </body>
 </html>

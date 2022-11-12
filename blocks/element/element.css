@@ -1,6 +1,6 @@
 .element {
     display: flex;
-    max-width: 100%;
+    width: 282px;
     flex-direction: column;
     box-sizing: border-box;
     border-radius: 10px;
@@ -8,11 +8,4 @@
     color: #000;
     margin: 0;
     padding: 0;
-}
-
-@media screen and (max-width: 568px) {
-    /* мобильные устройства */
-    .elements__list {
-        max-width: 282px;
-    }
 }

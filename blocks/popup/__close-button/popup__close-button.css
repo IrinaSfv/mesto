@@ -3,7 +3,7 @@
     top: -40px;
     right: -40px;
     background-image: url(../../../images/EditForm_CloseIcon.svg);
-    background-size: 32px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 32px;
@@ -22,8 +22,7 @@
 @media screen and (max-width: 568px) {
     .popup__close-button {
         top: -36px;
-        right: 19px;
-        background-size: 20px;
+        right: 0;
         width: 20px;
         height: 20px;
     }

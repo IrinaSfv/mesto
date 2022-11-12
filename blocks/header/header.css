@@ -5,6 +5,17 @@
     width: 100%;
 }
 
+.header::after {
+    content: "";
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 38px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgba(84,84,84,0.7);
+}
+
 @media screen and (max-width: 1190px) {
     .header {
         padding: 0 100px;
@@ -21,5 +32,11 @@
 @media screen and (max-width: 760px) {
     .header {
         padding: 0;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .header::after {
+       height: 28.6px;
     }
 }

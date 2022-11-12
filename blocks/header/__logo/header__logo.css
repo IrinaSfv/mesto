@@ -1,5 +1,9 @@
 .header__logo {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     max-width: 142px;
+    max-height: 33px;
     object-fit: cover;
 }
 
@@ -13,5 +17,6 @@
     /* мобильные устройства */
     .header__logo {
         max-width: 103.74px;
+        max-height: 24.4px;
     }
 }
