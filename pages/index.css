@@ -1,17 +1,17 @@
-/*Main*/
+/* Main */
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
 
-/*Page*/
+/* Page */
 @import url(../blocks/page/page.css);
 @import url(../blocks/page/__content/page__content.css);
 
-/*Header*/
+/* Header */
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__line/header__line.css);
 @import url(../blocks/header/__logo/header__logo.css);
 
-/*Profile*/
+/* Profile */
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__avatar-info/profile__avatar-info.css);
@@ -20,11 +20,11 @@
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
-/*Elements*/
+/* Elements */
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__list/elements__list.css);
 
-/*Element*/
+/* Element */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__photo/element__photo.css);
 @import url(../blocks/element/__description/element__description.css);
@@ -32,11 +32,11 @@
 @import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/element/__like-button/_active/element__like-button_active.css);
 
-/*Footer*/
+/* Footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
-/*Popup*/
+/* Popup */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
