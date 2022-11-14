@@ -6,8 +6,9 @@
     grid-row-start: 1;
     grid-row-end: 2;
     width: 294px;
-    overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-style: normal;
     font-weight: 500;
     font-size: 42px;

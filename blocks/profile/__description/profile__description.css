@@ -7,8 +7,9 @@
     grid-row-end: 3;
     align-self: start;
     width: 336px;
-    overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
