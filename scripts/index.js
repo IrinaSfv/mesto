@@ -96,6 +96,26 @@ function addFormSubmit(evt) {
   initialNewCard.querySelector('.element__title').textContent = placeInput.value;
   cardsList.prepend(initialNewCard); 
   addPopupClose();
+  const trashButton = document.querySelector('.element__trash-button'); 
+  const likeButton = document.querySelector('.element__like-button');
+  const openButton = document.querySelector('.element__photo');
+  trashButton.addEventListener('click', function() {
+    const deleteItem = trashButton.closest('.elements__card');
+    deleteItem.remove();
+  });
+  likeButton.addEventListener('click', function() {
+    likeButton.classList.toggle('element__like-button_active');
+  });
+  openButton.addEventListener('click', function() {
+    picturePopup.classList.add('popup_opened');
+    const elementPhoto = openButton.closest('.element__photo');
+    const elementButton = openButton.nextElementSibling;
+    const elementDescription = elementButton.nextElementSibling;
+    const elementTitle = elementDescription.firstElementChild;
+    pictureImage.src = elementPhoto.src;
+    pictureImage.alt = elementPhoto.alt;
+    pictureCaption.textContent = elementTitle.textContent;
+  });
 }
 
 function picturePopupClose() {
@@ -113,7 +133,7 @@ closeButton.addEventListener('click', picturePopupClose);
 
 // Лайк
 for(let i = 0; i < likeButton.length; i += 1) {
-  likeButton[i].addEventListener('click', function (evt) {
+  likeButton[i].addEventListener('click', function(evt) {
     const eventTarget = evt.target;
     eventTarget.classList.toggle('element__like-button_active');
   }); 
