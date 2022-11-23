@@ -1,0 +1,29 @@
+.picture-popup__close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background-image: url(../../../images/EditForm_CloseIcon.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.picture-popup__close-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 568px) {
+    .picture-popup__close-button {
+        top: -36px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+    }
+}

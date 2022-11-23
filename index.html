@@ -23,7 +23,19 @@
         </section>
         <section class="elements" aria-label="Элементы">
             <ul class="elements__list">
-                <li>
+                <template id="initialCards">
+                    <li class="elements__card">
+                        <article class="element">
+                            <img class="element__photo">
+                            <button class="element__trash-button" type="button" aria-label="Кнопка для удаления карточки места"></button>
+                            <div class="element__description">
+                                <h2 class="element__title"></h2>
+                                <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
+                            </div>
+                        </article>
+                    </li>
+                  </template> 
+                <!-- <li>
                     <article class="element">
                         <img class="element__photo" src="./images/Elements_Karachaevsk.jpg" alt="Замок в Карачаевске"> 
                         <div class="element__description">
@@ -58,7 +70,7 @@
                             <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
-                </li>
+                </li> 
                 <li>
                     <article class="element">
                         <img class="element__photo" src="./images/Elements_Dombai.jpg" alt="Горы"> 
@@ -76,22 +88,42 @@
                             <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
                         </div>
                     </article>
-                </li>
+                </li> -->
             </ul>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright" lang="en">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
-        <div class="popup__container">
-            <button class="popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="editPopup">
+    <div class="edit-popup popup">
+        <div class="edit-popup__container popup__container">
+            <button class="edit-popup__close-button popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
+            <h2 class="edit-popup__title popup__title">Редактировать профиль</h2>
+            <form class="edit-popup__form popup__form" name="editPopup">
                 <input class="popup__input popup__input_type_name" type="text" name="name" value="Имя" placeholder="Имя">
                 <input class="popup__input popup__input_type_user-info" type="text" name="userInfo" value="О себе" placeholder="О себе">
-                <button type="submit" class="popup__submit-button">Сохранить</button>
+                <button type="submit" class="edit-popup__submit-button popup__submit-button">Сохранить</button>
             </form>
+        </div>
+    </div>
+    <div class="add-popup popup">
+        <div class="add-popup__container popup__container">
+            <button class="add-popup__close-button popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
+            <h2 class="add-popup__title popup__title">Новое место</h2>
+            <form class="add-popup__form popup__form" name="addPopup">
+                <input class="popup__input popup__input_type_place" type="text" name="place" value="" placeholder="Название">
+                <input class="popup__input popup__input_type_link" type="text" name="link" value="" placeholder="Ссылка на картинку">
+                <button type="submit" class="add-popup__submit-button popup__submit-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="picture-popup popup">
+        <div class="picture-popup__container">
+            <button class="picture-popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
+            <figure class="picture-popup__figure">
+                <img class="picture-popup__image" src="#" alt="">
+                <figcaption class="picture-popup__caption"></figcaption>
+            </figure>
         </div>
     </div>
     <script src="./scripts/index.js" defer></script>

@@ -6,4 +6,5 @@
     border-top-right-radius: 10px;
     object-fit: cover;
     display: block;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
