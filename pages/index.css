@@ -47,6 +47,7 @@
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 
 /* Picture Popup */
+@import url(../blocks/picture-popup/picture-popup.css);
 @import url(../blocks/picture-popup/__container/picture-popup__container.css);
 @import url(../blocks/picture-popup/__close-button/picture-popup__close-button.css);
 @import url(../blocks/picture-popup/__figure/picture-popup__figure.css);
