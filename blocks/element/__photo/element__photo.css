@@ -7,4 +7,5 @@
     object-fit: cover;
     display: block;
     transform: matrix(-1, 0, 0, 1, 0, 0);
+    cursor: pointer;
 }
