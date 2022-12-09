@@ -33,6 +33,9 @@ const buttonClosePicture = picturePopup.querySelector('.picture-popup__close-but
 const pictureImage = picturePopup.querySelector('.picture-popup__image');
 const pictureCaption = picturePopup.querySelector('.picture-popup__caption');
 
+// Открытый попап на данный момент
+let popupOpened;
+
 // Функции
 function createCard(src, textContent) {
   const cardTemplateClone = cardTemplate.content.cloneNode(true);
@@ -51,10 +54,16 @@ function createCard(src, textContent) {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  popupOpened = popup;
+  document.addEventListener('keyup', handleKeyUp);
+  popup.addEventListener('click', handleOverlay);
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  popupOpened = null;
+  document.removeEventListener('keyup', handleKeyUp);
+  popup.removeEventListener('click', handleOverlay);
 };
 
 function openPopupForEdit() {
@@ -113,6 +122,19 @@ function handleAddFormSubmit(evt) {
   closePopup(popupAdd);
   linkInput.value = '';
   placeInput.value = '';
+};
+
+function handleKeyUp(evt) {
+  if(evt.key === 'Escape') {
+    popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+};
+
+function handleOverlay(evt) {
+  if(!evt.target.closest('.popup__container')) {
+    closePopup(evt.target.closest('.popup_opened'));
+  }
 };
 
 //События

@@ -46,9 +46,11 @@
             <button class="edit-popup__close-button popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
             <h2 class="edit-popup__title popup__title">Редактировать профиль</h2>
             <form class="edit-popup__form popup__form" name="editPopup">
-                <input class="popup__input popup__input_type_name" type="text" name="name" value="Имя" placeholder="Имя">
-                <input class="popup__input popup__input_type_user-info" type="text" name="userInfo" value="О себе" placeholder="О себе">
-                <button type="submit" class="edit-popup__submit-button popup__submit-button">Сохранить</button>
+                <input class="popup__input popup__input_type_name" type="text" name="name" value="Имя" placeholder="Имя" id="name-input" minlength="2" maxlength="40" required>
+                <span id="name-input-error" class="popup__error"></span>
+                <input class="popup__input popup__input_type_user-info" type="text" name="userInfo" value="О себе" placeholder="О себе" id="userInfo-input" minlength="2" maxlength="200" required>
+                <span id="userInfo-input-error" class="popup__error"></span>
+                <button type="submit" class="edit-popup__submit-button popup__submit-button popup__button">Сохранить</button>
             </form>
         </div>
     </div>
@@ -57,14 +59,16 @@
             <button class="add-popup__close-button popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
             <h2 class="add-popup__title popup__title">Новое место</h2>
             <form class="add-popup__form popup__form" name="addPopup">
-                <input class="popup__input popup__input_type_place" type="text" name="place" value="" placeholder="Название">
-                <input class="popup__input popup__input_type_link" type="text" name="link" value="" placeholder="Ссылка на картинку">
-                <button type="submit" class="add-popup__submit-button popup__submit-button">Сохранить</button>
+                <input class="popup__input popup__input_type_place" type="text" name="place" value="" placeholder="Название" id="place-input" minlength="2" maxlength="30" required>
+                <span id="place-input-error" class="popup__error"></span>
+                <input class="popup__input popup__input_type_link" type="url" name="link" value="" placeholder="Ссылка на картинку" id="link-input" required>
+                <span id="link-input-error" class="popup__error"></span>
+                <button type="submit" class="add-popup__submit-button popup__submit-button popup__button">Сохранить</button>
             </form>
         </div>
     </div>
     <div class="picture-popup popup">
-        <div class="picture-popup__container">
+        <div class="picture-popup__container popup__container">
             <button class="picture-popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
             <figure class="picture-popup__figure">
                 <img class="picture-popup__image" src="#" alt="">
@@ -72,6 +76,7 @@
             </figure>
         </div>
     </div>
+    <script src="./scripts/validate.js" defer></script>
     <script src="./scripts/cards.js" defer></script>
     <script src="./scripts/index.js" defer></script>
 </body>

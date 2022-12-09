@@ -1,10 +1,10 @@
-.popup__input {
+.popup__input_type_error {
     margin: 0;
     padding: 0;
     width: 100%;
     padding-bottom: 8px;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #FF0000; /* красная рамка для некорректных данных */
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
