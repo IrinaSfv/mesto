@@ -12,17 +12,17 @@
     };
   }
 
-  const toggleButtonState = (inputList, button, checkConfig) => {
+  const toggleButtonState = (inputList, buttonElement, checkConfig) => {
     const isValid = inputList.every(inputElement => {
         return inputElement.validity.valid;
     });
 
     if(isValid) {
-        button[0].classList.remove(checkConfig.inactiveButtonClass);
-        button[0].disabled = '';
+        buttonElement.classList.remove(checkConfig.inactiveButtonClass);
+        buttonElement.disabled = '';
     } else {
-        button[0].classList.add(checkConfig.inactiveButtonClass);
-        button[0].disabled = 'disabled';
+        buttonElement.classList.add(checkConfig.inactiveButtonClass);
+        buttonElement.disabled = 'disabled';
     }
   }
 
@@ -34,8 +34,8 @@ const enableValidation = (checkConfig) => {
     const formList = [...document.querySelectorAll(formSelector)];
     formList.forEach(formElement => {
         const inputList = [...formElement.querySelectorAll(inputSelector)];
-        const button = formElement.querySelectorAll(submitButtonSelector);
-        toggleButtonState(inputList, button, restCheckConfig);
+        const buttonElement = formElement.querySelectorAll(submitButtonSelector)[0];
+        toggleButtonState(inputList, buttonElement, restCheckConfig);
         formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
@@ -43,7 +43,7 @@ const enableValidation = (checkConfig) => {
         inputList.forEach(inputElement => {
             inputElement.addEventListener('input', () => {
                 checkInputValue(inputElement, restCheckConfig);
-                toggleButtonState(inputList, button, restCheckConfig);
+                toggleButtonState(inputList, buttonElement, restCheckConfig);
             });
         });
       });

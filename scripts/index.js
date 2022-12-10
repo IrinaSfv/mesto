@@ -39,15 +39,17 @@ let popupOpened;
 // Функции
 function createCard(src, textContent) {
   const cardTemplateClone = cardTemplate.content.cloneNode(true);
-  cardTemplateClone.querySelector('.element__photo').src = src;
-  cardTemplateClone.querySelector('.element__photo').alt = textContent;
-  cardTemplateClone.querySelector('.element__title').textContent = textContent;
+  const elementPhoto = cardTemplateClone.querySelector('.element__photo');
+  const elementTitle = cardTemplateClone.querySelector('.element__title');
   const elementCard = cardTemplateClone.querySelector('.elements__card');
   const likeButton = elementCard.querySelector('.element__like-button');
-  likeButton.addEventListener('click', () => handleLikeButton(likeButton));
   const trashButton = elementCard.querySelector('.element__trash-button');
-  trashButton.addEventListener('click', () => handleTrashButton(elementCard));
   const buttonOpenPicture = elementCard.querySelector('.element__photo');
+  elementPhoto.src = src;
+  elementPhoto.alt = textContent;
+  elementTitle.textContent = textContent;
+  likeButton.addEventListener('click', () => handleLikeButton(likeButton));
+  trashButton.addEventListener('click', () => handleTrashButton(elementCard));
   buttonOpenPicture.addEventListener('click', openPicturePopup);
   return cardTemplateClone;
 };
@@ -56,7 +58,7 @@ function openPopup(popup) {
   popup.classList.add('popup_opened');
   popupOpened = popup;
   document.addEventListener('keyup', handleKeyUp);
-  popup.addEventListener('click', handleOverlay);
+  popup.addEventListener('mousedown', handleOverlay);
 };
 
 function closePopup(popup) {
