@@ -1,5 +1,15 @@
-import { cardsContainer, Card } from './Card.js';
-import { checkForms, FormValidator } from './FormValidator.js';
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
+import { picturePopup, openPopup, closePopup } from './popup.js';
+import { initialCards } from './cardList.js'
+
+const cardsContainer = document.querySelector('.elements__list');
+
+initialCards.forEach((item) => {
+  const card = new Card(item, '.card-template');
+  const cardElement = card.generateCard();
+  cardsContainer.append(cardElement);
+}); 
 
 //Переменные для редактирования профиля
 const popupEdit = document.querySelector('.edit-popup');
@@ -17,35 +27,27 @@ const buttonCloseAdd = popupAdd.querySelector('.add-popup__close-button');
 const placeInput = popupAdd.querySelector('.popup__input_type_place');
 const linkInput = popupAdd.querySelector('.popup__input_type_link');
 
-// Переменные для открытия картинки
-const picturePopup = document.querySelector('.picture-popup');
+// Переменные для закрытия картинки
 const buttonClosePicture = picturePopup.querySelector('.picture-popup__close-button');
-const pictureImage = picturePopup.querySelector('.picture-popup__image');
-const pictureCaption = picturePopup.querySelector('.picture-popup__caption');
-
-// Открытый попап на данный момент
-let popupOpened;
 
 //Переменные для валидации форм 
 const elementEditForm = popupEdit.querySelector('.edit-popup__form');
 const elementAddForm = popupAdd.querySelector('.add-popup__form');
 
-export { popupOpened, picturePopup, pictureImage, pictureCaption };
+// // Функции
+// export function openPopup(popup) {
+//   popup.classList.add('popup_opened');
+//   popupOpened = popup;
+//   document.addEventListener('keyup', handleKeyUp);
+//   popup.addEventListener('mousedown', handleOverlay);
+// };
 
-// Функции
-export function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  popupOpened = popup;
-  document.addEventListener('keyup', handleKeyUp);
-  popup.addEventListener('mousedown', handleOverlay);
-};
-
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  popupOpened = null;
-  document.removeEventListener('keyup', handleKeyUp);
-  popup.removeEventListener('click', handleOverlay);
-};
+// function closePopup(popup) {
+//   popup.classList.remove('popup_opened');
+//   popupOpened = null;
+//   document.removeEventListener('keyup', handleKeyUp);
+//   popup.removeEventListener('click', handleOverlay);
+// };
 
 function openPopupForEdit() {
   openPopup(popupEdit);
@@ -87,19 +89,8 @@ function handleAddFormSubmit(evt) {
   closePopup(popupAdd);
   linkInput.value = '';
   placeInput.value = '';
-};
-
-function handleKeyUp(evt) {
-  if(evt.key === 'Escape') {
-    popupOpened = document.querySelector('.popup_opened');
-    closePopup(popupOpened);
-  }
-};
-
-function handleOverlay(evt) {
-  if(!evt.target.closest('.popup__container')) {
-    closePopup(evt.target.closest('.popup_opened'));
-  }
+  this.querySelector('.add-popup__submit-button').classList.add('popup__submit-button_disabled');
+  this.querySelector('.add-popup__submit-button').disabled = 'disabled';
 };
 
 //События
@@ -112,6 +103,15 @@ elementAddForm.addEventListener('submit', handleAddFormSubmit);
 buttonClosePicture.addEventListener('click', closePicturePopup);
 
 //Валидация 
+const checkForms = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+};
+
 const checkEditForm = new FormValidator(checkForms, elementEditForm);
 const checkAddForm = new FormValidator(checkForms, elementAddForm);
 checkEditForm.enableValidation();
