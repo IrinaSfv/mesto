@@ -26,6 +26,7 @@ const popupAdd = document.querySelector('.add-popup');
 const buttonCloseAdd = popupAdd.querySelector('.add-popup__close-button');
 const placeInput = popupAdd.querySelector('.popup__input_type_place');
 const linkInput = popupAdd.querySelector('.popup__input_type_link');
+const submitAddButton = popupAdd.querySelector('.add-popup__submit-button');
 
 // Переменные для закрытия картинки
 const buttonClosePicture = picturePopup.querySelector('.picture-popup__close-button');
@@ -35,20 +36,6 @@ const elementEditForm = popupEdit.querySelector('.edit-popup__form');
 const elementAddForm = popupAdd.querySelector('.add-popup__form');
 
 // // Функции
-// export function openPopup(popup) {
-//   popup.classList.add('popup_opened');
-//   popupOpened = popup;
-//   document.addEventListener('keyup', handleKeyUp);
-//   popup.addEventListener('mousedown', handleOverlay);
-// };
-
-// function closePopup(popup) {
-//   popup.classList.remove('popup_opened');
-//   popupOpened = null;
-//   document.removeEventListener('keyup', handleKeyUp);
-//   popup.removeEventListener('click', handleOverlay);
-// };
-
 function openPopupForEdit() {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
@@ -89,8 +76,8 @@ function handleAddFormSubmit(evt) {
   closePopup(popupAdd);
   linkInput.value = '';
   placeInput.value = '';
-  this.querySelector('.add-popup__submit-button').classList.add('popup__submit-button_disabled');
-  this.querySelector('.add-popup__submit-button').disabled = 'disabled';
+  submitAddButton.classList.add('popup__submit-button_disabled');
+  submitAddButton.disabled = 'disabled';
 };
 
 //События

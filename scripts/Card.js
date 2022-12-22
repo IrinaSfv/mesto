@@ -44,11 +44,9 @@ export class Card {
 
   _handleCardClick() {
     openPopup(picturePopup);
-    const src = this._element.querySelector('.element__photo').src;
-    const textContent = this._element.querySelector('.element__photo').alt;
-    pictureImage.src = src;
-    pictureImage.alt = textContent;
-    pictureCaption.textContent = textContent;
+    pictureImage.src = this._link;
+    pictureImage.alt = this._name;
+    pictureCaption.textContent = this._name;
   }
 
   _handleLikeButton() {
