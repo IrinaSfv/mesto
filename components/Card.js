@@ -1,15 +1,13 @@
-import { picturePopup, pictureImage, pictureCaption, openPopup } from './popup.js';
-
-export class Card {
-  constructor(data, templateSelector) { 
+export default class Card {
+  constructor(data, templateElement, handleCardClick) { 
       this._name = data.name;
       this._link = data.link;
-      this._templateSelector = templateSelector; 
+      this._templateElement = templateElement; 
+      this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
-    const cardElement = document
-    .querySelector(this._templateSelector)
+    const cardElement = this._templateElement
     .content
     .querySelector('.elements__card')
     .cloneNode(true);
@@ -40,13 +38,6 @@ export class Card {
     openPicturePopup.addEventListener('click', () => {
       this._handleCardClick();
     });
-  }
-
-  _handleCardClick() {
-    openPopup(picturePopup);
-    pictureImage.src = this._link;
-    pictureImage.alt = this._name;
-    pictureCaption.textContent = this._name;
   }
 
   _handleLikeButton() {
