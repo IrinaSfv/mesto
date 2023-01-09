@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
+    <!-- <link rel="stylesheet" href="./pages/index.css"> -->
     <title lang="en">Mesto Russia</title>
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/Header_Logo.svg" alt="Логотип">
+        <img class="header__logo" src="<%=require('./images/Header_Logo.svg')%>" alt="Логотип">
     </header>
     <main class="content page__content">
         <section class="profile">
-            <img class="profile__avatar" src="./images/Profile_Avatar.jpg" alt="Аватар">
+            <img class="profile__avatar" src="<%=require('./images/Profile_Avatar.jpg')%>" alt="Аватар">
             <div class="profile__avatar-info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button class="profile__edit-button" type="button" aria-label="Кнопка редактирования профиля пользователя"></button>
@@ -76,6 +76,6 @@
             </figure>
         </div>
     </div>
-    <script type="module" src="/pages/index.js" defer></script>
+    <!-- <script type="module" src="/pages/index.js" defer></script> -->
 </body>
 </html>
