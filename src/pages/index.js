@@ -1,7 +1,3 @@
-// const headerLogo = new URL('./images/Header_Logo.svg', import.meta.url);
-// const profileAvatar = new URL('./images/Profile_Avatar.jpg', import.meta.url);
-// const profileEditButton = new URL('./images/Profile_EditButton.svg', import.meta.url);
-// const profileAddButton = new URL('./images/Profile_AddButton.svg', import.meta.url);
 import '../pages/index.css';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
