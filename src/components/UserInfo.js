@@ -11,8 +11,8 @@ export default class UserInfo {
       };
     }
 
-    setUserInfo(profileName, profileJob) { // принимает новые данные пользователя и добавляет их на страницу
-      this._profileName.textContent = profileName;
-      this._profileJob.textContent = profileJob;
+    setUserInfo(data) { // принимает новые данные пользователя и добавляет их на страницу
+      this._profileName.textContent = Object.values(data)[0];
+      this._profileJob.textContent = Object.values(data)[1];
     }
   }
