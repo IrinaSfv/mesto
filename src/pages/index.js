@@ -33,7 +33,8 @@ const picturePopup = new PopupWithImage('.picture-popup');
 // Функции работы попапов
 function handleEditFormSubmit(data) {
   userInfo.setUserInfo(data);
-  popupEdit.close(); 
+  popupEdit.close();
+  data = userInfo.getUserInfo();
 };
 
 function handleAddFormSubmit(data) {
