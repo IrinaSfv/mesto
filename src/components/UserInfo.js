@@ -5,14 +5,14 @@ export default class UserInfo {
   } 
   
     getUserInfo() { // возвращает объект с данными пользователя
-      return {
-        profileName: this._profileName.textContent,
-        profileJob: this._profileJob.textContent
-      };
+      const profileInfo = {};
+      profileInfo.name = this._profileName.textContent,
+      profileInfo.job = this._profileJob.textContent;
+      return profileInfo;
     }
 
-    setUserInfo(userData) { // принимает новые данные пользователя и добавляет их на страницу
-      this._profileName.textContent = userData['name-input'];
-      this._profileJob.textContent = userData['userInfo-input'];
+    setUserInfo(inputName, inputJob) { // принимает новые данные пользователя и добавляет их на страницу
+      this._profileName.textContent = inputName;
+      this._profileJob.textContent = inputJob;
     }
   }

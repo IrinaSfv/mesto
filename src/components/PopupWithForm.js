@@ -12,7 +12,7 @@ export default class PopupWithForm extends Popup {
     _getInputValues() { //собирает данные всех полей формы
         const inputsValues = {};
         Array.from(this._inputList).forEach(inputElement => {
-            inputsValues[inputElement.id] = inputElement.value;
+            inputsValues[inputElement.name] = inputElement.value;
         });
         return inputsValues;
     }

@@ -39,6 +39,8 @@ export const checkForms = {
 
 //Переменные для редактирования профиля
 export const buttonEdit = document.querySelector('.profile__edit-button');
+export const inputName = document.querySelector('#name-input');
+export const inputJob = document.querySelector('#userInfo-input');
 
 //Переменные для добавления карточки
 export const buttonAdd = document.querySelector('.profile__add-button');

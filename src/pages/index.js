@@ -5,7 +5,7 @@ import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
-import { initialCards, cardsContainer, buttonEdit, buttonAdd, checkForms} from '../utils/constants.js';
+import { initialCards, cardsContainer, buttonEdit, inputName, inputJob, buttonAdd, checkForms} from '../utils/constants.js';
 
 //Карточки
 const cardList = new Section({ 
@@ -25,13 +25,11 @@ const userInfo = new UserInfo({
 
 //Попапы
 const popupEdit = new PopupWithForm('.edit-popup', handleEditFormSubmit);
-const inputName = popupEdit.formElement.querySelector('#name-input');
-const inputJob = popupEdit.formElement.querySelector('#userInfo-input');
 popupEdit.setEventListeners();
 buttonEdit.addEventListener('click', () => {
   const profileData = userInfo.getUserInfo();
-  inputName.value = profileData.profileName;
-  inputJob.value = profileData.profileJob;
+  inputName.value = profileData.name;
+  inputJob.value = profileData.job;
   popupEdit.open();
 });
 const popupAdd = new PopupWithForm('.add-popup', handleAddFormSubmit);
@@ -42,14 +40,16 @@ picturePopup.setEventListeners();
 
 // Функции работы попапов
 function handleEditFormSubmit(userData) {
-  userInfo.setUserInfo(userData);
+  const { name, about } = userData;
+  userInfo.setUserInfo(name, about);
   popupEdit.close();
 };
 
 function handleAddFormSubmit(userData) {
   const newItem = {};
-  newItem.link = userData['link-input'];
-  newItem.name = userData['place-input'];
+  const { place, pictureSrc } = userData;
+  newItem.link = pictureSrc;
+  newItem.name = place;
   const newCard = createCards(newItem);
   cardList.addNewItem(newCard);
   popupAdd.close();
