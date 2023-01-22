@@ -25,22 +25,31 @@ const userInfo = new UserInfo({
 
 //Попапы
 const popupEdit = new PopupWithForm('.edit-popup', handleEditFormSubmit);
-buttonEdit.addEventListener('click', popupEdit.open.bind(popupEdit));
+const inputName = popupEdit.formElement.querySelector('#name-input');
+const inputJob = popupEdit.formElement.querySelector('#userInfo-input');
+popupEdit.setEventListeners();
+buttonEdit.addEventListener('click', () => {
+  const profileData = userInfo.getUserInfo();
+  inputName.value = profileData.profileName;
+  inputJob.value = profileData.profileJob;
+  popupEdit.open();
+});
 const popupAdd = new PopupWithForm('.add-popup', handleAddFormSubmit);
+popupAdd.setEventListeners();
 buttonAdd.addEventListener('click', popupAdd.open.bind(popupAdd));
 const picturePopup = new PopupWithImage('.picture-popup');
+picturePopup.setEventListeners();
 
 // Функции работы попапов
-function handleEditFormSubmit(data) {
-  userInfo.setUserInfo(data);
+function handleEditFormSubmit(userData) {
+  userInfo.setUserInfo(userData);
   popupEdit.close();
-  data = userInfo.getUserInfo();
 };
 
-function handleAddFormSubmit(data) {
+function handleAddFormSubmit(userData) {
   const newItem = {};
-  newItem.link = Object.values(data)[1];
-  newItem.name = Object.values(data)[0];
+  newItem.link = userData['link-input'];
+  newItem.name = userData['place-input'];
   const newCard = createCards(newItem);
   cardList.addNewItem(newCard);
   popupAdd.close();
