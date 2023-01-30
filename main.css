@@ -44,4 +44,5 @@
 .picture-popup__figure{margin:0;padding:0}
 .picture-popup__image{max-height:75vh;max-width:75vw;-o-object-fit:cover;object-fit:cover}
 .picture-popup__caption{bottom:-25px;color:#fff;font-size:12px;font-style:normal;font-weight:400;left:0;line-height:15px;margin:0;padding:0;position:absolute}
+.deletion-confirm-popup__submit-button{margin:0}
 
