@@ -21,7 +21,7 @@
 .element__description{align-items:center;display:flex;justify-content:space-between;margin:25px 20px 25px 21px;max-height:35px}
 .element__title{font-size:24px;font-style:normal;font-weight:900;line-height:29px;margin:0;max-width:185px;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}
 .element__like-button{align-self:center;background-color:transparent;background-image:url(87ed371465c7a6a1cd01.svg);background-position:50%;background-repeat:no-repeat;background-size:cover;border:none;cursor:pointer;height:19px;margin:0;padding:0;transition:.2s;width:22px}.element__like-button:hover{opacity:.5}
-.element__like-container{align-items:center;display:flex;flex-direction:column;justify-content:space-between;max-height:35px}
+.element__like-container{align-items:center;display:flex;flex-direction:column;gap:3px;max-height:35px}
 .element__like-button_active{background-image:url(fe17a515669479b1e649.svg)}
 .element__like-caption{font-size:13px;font-weight:400;line-height:16px;margin:0;padding:0}
 .footer{box-sizing:border-box;margin:0;padding:0 200px;width:100%}@media screen and (max-width:1190px){.footer{padding:0 100px}}@media screen and (max-width:990px){.footer{padding:0 50px}}@media screen and (max-width:760px){.footer{padding:0 19px}}
