@@ -13,7 +13,10 @@
     </header>
     <main class="content page__content">
         <section class="profile">
-            <img class="profile__avatar" src="<%=require('./images/Profile_Avatar.jpg')%>" alt="Аватар">
+            <div class="profile__avatar-container">
+                <button class="profile__avatar-edit-button" type="button" aria-label="Кнопка редактирования аватара пользователя"></button>
+                <img class="profile__avatar" src="<%=require('./images/Profile_Avatar.jpg')%>" alt="Аватар">
+            </div>
             <div class="profile__avatar-info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button class="profile__edit-button" type="button" aria-label="Кнопка редактирования профиля пользователя"></button>
@@ -30,7 +33,10 @@
                             <button class="element__trash-button" type="button" aria-label="Кнопка для удаления карточки места"></button>
                             <div class="element__description">
                                 <h2 class="element__title"></h2>
-                                <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
+                                <div class="element__like-container">
+                                    <button class="element__like-button" type="button" aria-label="Кнопка лайка карточке места"></button>
+                                    <p class="element__like-caption">0</p>
+                                </div>
                             </div>
                         </article>
                     </li>
@@ -63,7 +69,7 @@
                 <span id="place-input-error" class="popup__error"></span>
                 <input class="popup__input popup__input_type_link" type="url" name="pictureSrc" value="" placeholder="Ссылка на картинку" id="link-input" required>
                 <span id="link-input-error" class="popup__error"></span>
-                <button type="submit" class="add-popup__submit-button popup__submit-button popup__button">Сохранить</button>
+                <button type="submit" class="add-popup__submit-button popup__submit-button popup__button">Добавить</button>
             </form>
         </div>
     </div>
@@ -74,6 +80,26 @@
                 <img class="picture-popup__image" src="#" alt="">
                 <figcaption class="picture-popup__caption"></figcaption>
             </figure>
+        </div>
+    </div>
+    <div class="deletion-confirm-popup popup">
+        <div class="deletion-confirm-popup__container popup__container">
+            <button class="deletion-confirm-popup__close-button popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
+            <h2 class="deletion-confirm-popup__title popup__title">Вы уверены?</h2>
+            <form class="deletion-confirm-popup__form popup__form" name="deletionPopup">
+                <button type="submit" class="deletion-confirm-popup__submit-button popup__submit-button popup__button">Да</button>
+            </form>
+        </div>
+    </div>
+    <div class="new-avatar-popup popup">
+        <div class="new-avatar-popup__container popup__container">
+            <button class="new-avatar-popup__close-button popup__close-button" type="button" aria-label="Кнопка закрытия данного попапа"></button>
+            <h2 class="new-avatar-popup__title popup__title">Обновить аватар</h2>
+            <form class="new-avatar-popup__form popup__form" name="newAvatarPopup">
+                <input class="popup__input popup__input_type_avatar" type="url" name="avatarSrc" value="" placeholder="Ссылка на аватар" id="avatar-input" required>
+                <span id="avatar-input-error" class="popup__error"></span>
+                <button type="submit" class="new-avatar-popup__submit-button popup__submit-button popup__button">Обновить</button>
+            </form>
         </div>
     </div>
     <!-- <script type="module" src="/pages/index.js" defer></script> -->

@@ -15,6 +15,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    visibility: hidden;
 }
 
 .element__trash-button:hover {
