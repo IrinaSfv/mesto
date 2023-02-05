@@ -43,8 +43,13 @@ export default class Card {
   } 
 
   _countLikes() {
-    let newLikes = this._likes;
+    const newLikes = this._likes;
     this._element.querySelector('.element__like-caption').textContent = newLikes.length;
+  }
+
+  switchLikes(likeButton, cardElement, res) {
+    likeButton.classList.toggle('element__like-button_active');
+    cardElement.querySelector('.element__like-caption').textContent = res.likes.length;
   }
 
   _setEventListeners() {
@@ -64,9 +69,9 @@ export default class Card {
   _handleLike() {
     // console.log(this._isLiked);
     if(this._isLiked) {
-      this._handleLikeClick(this._element, this._likeButton, this._id, "remove");
+      this._handleLikeClick(this, this._element, this._likeButton, this._id, "remove");
     } else {
-      this._handleLikeClick(this._element, this._likeButton, this._id, "set");
+      this._handleLikeClick(this, this._element, this._likeButton, this._id, "set");
     }
     this._isLiked = !this._isLiked;
   };

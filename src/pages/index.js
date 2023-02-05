@@ -59,15 +59,14 @@ function handleEditFormSubmit(userData) {
   api.editProfile(name, about)
   .then(() => {
     userInfo.setUserInfo(name, about);
+    popupEdit.close();
   })
   .catch(() => {
     console.log(`Ошибка при обновлении данных.`)
   })
   .finally(() => {
     popupEdit.handleLoading(false);
-    popupEdit.close();
-    popupEdit.submitButton.classList.add('popup__submit-button_disabled');
-    popupEdit.submitButton.disabled = 'disabled';
+    checkEditForm.enableValidation();
   });
 };
 
@@ -83,6 +82,7 @@ function handleAddFormSubmit(userData) {
   .then((res) => { //получаем объект новой карточки
     const newCard = createCards(res);
     cardList.addItemPrepend(newCard);
+    popupAdd.close();
     console.log(`Карточка добавлена.`)
   })
   .catch(() => {
@@ -90,9 +90,7 @@ function handleAddFormSubmit(userData) {
   })
   .finally(() => {
     popupAdd.handleLoading(false);
-    popupAdd.close();
-    popupAdd.submitButton.classList.add('popup__submit-button_disabled');
-    popupAdd.submitButton.disabled = 'disabled';
+    checkAddForm.enableValidation();
   });
 };
 
@@ -115,26 +113,23 @@ function handleTrashClick(card, cardId) {
 function handleDeletionConfirm(card, cardId) {
   api.deleteCard(cardId)
   .then(() => {
-    card.remove();
+    card.remove(); //Удаление карточки должно происходить только в классе Card. Используйте методы класса для этого
+    popupConfirm.close();
     console.log(`Карточка удалена.`)
   })
   .catch(() => {
     console.log(card);
     console.log(cardId);
     console.log(`Ошибка при удалении карточки.`)
-  })
-  .finally(() => {
-    popupConfirm.close();
   });
 }
 
 // Постановка и снятие лайка
-function handleLikeClick(card, likeButton, cardId, action) {
+function handleLikeClick(card, cardElement, likeButton, cardId, action) {
   if(action == "set") {
     api.setLike(cardId)
     .then((res) => { //получаем обновленный объект карточки
-      likeButton.classList.add('element__like-button_active');
-      card.querySelector('.element__like-caption').textContent = res.likes.length;
+      card.switchLikes(likeButton, cardElement, res);
     })
     .catch(() => {
       console.log(`Ошибка при постановке лайка.`)
@@ -142,8 +137,7 @@ function handleLikeClick(card, likeButton, cardId, action) {
   } else if(action == "remove") {
     api.removeLike(cardId)
     .then((res) => { //получаем обновленный объект карточки
-      likeButton.classList.remove('element__like-button_active');
-      card.querySelector('.element__like-caption').textContent = res.likes.length;
+      card.switchLikes(likeButton, cardElement, res);
     })
     .catch(() => {
       console.log(`Ошибка при удалении лайка.`)
@@ -161,15 +155,14 @@ function handleAvatarChange(avatarData) {
   api.changeAvatar(avatarData.avatarSrc)
   .then((res) => { //получаем объект нового аватара 
     userInfo.setAvatar(res.avatar);
+    popupAvatar.close();
   })
   .catch(() => {
     console.log(`Ошибка при обновлении аватара.`)
   })
   .finally(() => {
     popupAvatar.handleLoading(false);
-    popupAvatar.close();
-    popupAvatar.submitButton.classList.add('popup__submit-button_disabled');
-    popupAvatar.submitButton.disabled = 'disabled';
+    checkAvatarForm.enableValidation();
   });
 }
 
