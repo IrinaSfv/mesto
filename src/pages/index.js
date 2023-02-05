@@ -113,23 +113,21 @@ function handleTrashClick(card, cardId) {
 function handleDeletionConfirm(card, cardId) {
   api.deleteCard(cardId)
   .then(() => {
-    card.remove(); //Удаление карточки должно происходить только в классе Card. Используйте методы класса для этого
+    card.deleteCard();
     popupConfirm.close();
     console.log(`Карточка удалена.`)
   })
   .catch(() => {
-    console.log(card);
-    console.log(cardId);
     console.log(`Ошибка при удалении карточки.`)
   });
 }
 
 // Постановка и снятие лайка
-function handleLikeClick(card, cardElement, likeButton, cardId, action) {
+function handleLikeClick(card, cardId, action) {
   if(action == "set") {
     api.setLike(cardId)
     .then((res) => { //получаем обновленный объект карточки
-      card.switchLikes(likeButton, cardElement, res);
+      card.switchLikes(res);
     })
     .catch(() => {
       console.log(`Ошибка при постановке лайка.`)
@@ -137,7 +135,7 @@ function handleLikeClick(card, cardElement, likeButton, cardId, action) {
   } else if(action == "remove") {
     api.removeLike(cardId)
     .then((res) => { //получаем обновленный объект карточки
-      card.switchLikes(likeButton, cardElement, res);
+      card.switchLikes(res);
     })
     .catch(() => {
       console.log(`Ошибка при удалении лайка.`)
