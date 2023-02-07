@@ -25,11 +25,11 @@ export default class FormValidator {
     }
 
     enableValidation() {
-        this._toggleButtonState();
+        this.toggleButtonState();
         this._setEventListeners();
     }
 
-    _toggleButtonState() {
+    toggleButtonState() {
         const isValid = this._inputList.every(inputElement => {
             return inputElement.validity.valid;
         });
@@ -47,7 +47,7 @@ export default class FormValidator {
         this._inputList.forEach(inputElement => {
             inputElement.addEventListener('input', () => {
                 this._checkInputValue(inputElement);
-                this._toggleButtonState();
+                this.toggleButtonState();
             });
         });
     }

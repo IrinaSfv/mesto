@@ -66,14 +66,16 @@ function handleEditFormSubmit(userData) {
   })
   .finally(() => {
     popupEdit.handleLoading(false);
-    checkEditForm.enableValidation();
   });
 };
 
 //Добавление новой карточки
 const popupAdd = new PopupWithForm('.add-popup', handleAddFormSubmit);
 popupAdd.setEventListeners();
-buttonAdd.addEventListener('click', popupAdd.open.bind(popupAdd));
+buttonAdd.addEventListener('click', () => {
+  checkAddForm.toggleButtonState();
+  popupAdd.open();
+});
 
 function handleAddFormSubmit(userData) {
   popupAdd.handleLoading(true, "Добавляем...");
@@ -90,7 +92,6 @@ function handleAddFormSubmit(userData) {
   })
   .finally(() => {
     popupAdd.handleLoading(false);
-    checkAddForm.enableValidation();
   });
 };
 
@@ -146,7 +147,10 @@ function handleLikeClick(card, cardId, action) {
 //Обновление аватара
 const popupAvatar = new PopupWithForm('.new-avatar-popup', handleAvatarChange);
 popupAvatar.setEventListeners();
-buttonAvatar.addEventListener('click', popupAvatar.open.bind(popupAvatar));
+buttonAvatar.addEventListener('click', () => {
+  checkAvatarForm.toggleButtonState();
+  popupAvatar.open();
+});
 
 function handleAvatarChange(avatarData) {
   popupAvatar.handleLoading(true, "Обновляем...");
@@ -160,7 +164,6 @@ function handleAvatarChange(avatarData) {
   })
   .finally(() => {
     popupAvatar.handleLoading(false);
-    checkAvatarForm.enableValidation();
   });
 }
 
