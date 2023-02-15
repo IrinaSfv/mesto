@@ -19,15 +19,18 @@ In this project, I've:
 * used the BEM methodology working with tags and the file structure.
 
 Using native JavaScript, I've:
-* added the functionality of profile editing and card creation,
+* added profile editing and avatar changing functionality,
 * made pop-ups opening when pressing the button and closing when clicking ESC or background,
-* added the functionality of putting and removing likes on cards, as well as deleting cards,
+* added the functionality of putting and removing likes on cards,
+* added functionality to add and delete only the card that was added by the user,
+* made API requests to the server,
 * added form validation.
 
 I've also learned how to:
 * use OOP when working on a project,
-* split the JS code into modules and use export/import.
-* build a project with Webpack.
+* split the JS code into modules and use export/import,
+* build a project with Webpack,
+* deploy the project to the server.
 
 ## Installation
 * Run `GitBash` (or `Terminal` on MacOS);
